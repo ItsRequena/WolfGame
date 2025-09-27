@@ -1,0 +1,21 @@
+.transition-container {
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.transition-image {
+  width: 100%;
+  height: auto;
+  animation: slideDown 1.5s ease forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(250%);
+  }
+}
