@@ -1,3 +1,5 @@
+@import "../styles/Login.css"; /* si quieres, para compartir estilos base */
+
 .wolf-container {
   display: flex;
   flex-direction: column;
@@ -16,23 +18,7 @@
   text-shadow: 0 0 10px red, 0 0 20px crimson;
 }
 
-.wolf-input {
-  padding: 10px 15px;
-  border: 2px solid crimson;
-  border-radius: 8px;
-  background: #111;
-  color: #fff;
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-  outline: none;
-  transition: 0.3s;
-}
-
-.wolf-input:focus {
-  border-color: red;
-  box-shadow: 0 0 10px crimson;
-}
-
+/* Reutilizamos el mismo estilo del botón */
 .wolf-button {
   padding: 12px 25px;
   border: none;
@@ -42,21 +28,11 @@
   font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
+  margin: 0.5rem 0;
   transition: transform 0.2s, background 0.3s;
 }
 
 .wolf-button:hover {
   background: red;
   transform: scale(1.05);
-}
-
-.wolf-logo{
-    width: 50px;
-}
-
-.wolf-error {
-  color: crimson;
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 5px red;
 }
