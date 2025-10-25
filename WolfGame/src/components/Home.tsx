@@ -1,14 +1,15 @@
-import { useEffect, useState } from "react";
-import "../styles/Home.css";
+import { useEffect, useState, useContext } from "react";
+import "../styles/WolfGame.css";
+import { OptionContext } from '../context/view.tsx'
 
 type HomeProps = {
   duration?: number;
-  username: string;
 };
 
 
-export function Home({duration = 1000, username} : HomeProps) {
+export function Home({duration = 1000} : HomeProps) {
 
+    const {setOption, username} : any = useContext(OptionContext)
     const [active, setActive] = useState(false);
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -19,7 +20,7 @@ export function Home({duration = 1000, username} : HomeProps) {
     }, [duration]);
 
     const handleCreateRoom = () => {
-        console.log("Crear sala clicado");
+        setOption('createLobby')
     };
 
     const handleJoinRoom = () => {

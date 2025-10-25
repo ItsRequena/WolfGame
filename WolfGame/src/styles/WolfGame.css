@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 90vh;
   color: #fff;
   font-family: "Trebuchet MS", sans-serif;
   padding: 2rem;
@@ -13,6 +13,12 @@
 .wolf-title {
   font-size: 2.5rem;
   margin-bottom: 2rem;
+  text-shadow: 0 0 10px red, 0 0 20px crimson;
+}
+
+.wolf-info {
+  margin-left:0%;
+  font-size: 1rem;
   text-shadow: 0 0 10px red, 0 0 20px crimson;
 }
 
@@ -33,6 +39,7 @@
   box-shadow: 0 0 10px crimson;
 }
 
+/* Reutilizamos el mismo estilo del botón */
 .wolf-button {
   padding: 12px 25px;
   border: none;
@@ -42,6 +49,7 @@
   font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
+  margin: 0.5rem 0;
   transition: transform 0.2s, background 0.3s;
 }
 

@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from "react";
-import { Test, connect } from "../services/signalR";
-import "../styles/Login.css";
+import { Live, connect } from "../services/signalR";
+import "../styles/WolfGame.css";
 import { OptionContext } from '../context/view.tsx'
 
 type LoginProps = {
@@ -22,14 +22,14 @@ export function Login({duration = 1000} : LoginProps) {
     const [error, setError] = useState("");
     
     // region de prueba
-    const [test, setTest] = useState("Cargando...");
+    const [live, setLive] = useState("Cargando...");
 
     useEffect(() => {
-        Test()
-            .then((data) => setTest(data))
+        Live()
+            .then((data) => setLive(data))
             .catch((error) => {
             console.error(error);
-            setTest("Error al cargar los datos");
+            setLive("Error al cargar los datos");
             });
     }, []);
     // fin region de prueba
@@ -66,19 +66,26 @@ export function Login({duration = 1000} : LoginProps) {
     return (
     active && (
     <div className="wolf-container">
-        <h1 className="wolf-title">Lobo de Castonegro</h1>
-        <h1 className="wolf-title">{test}</h1>
-        <input
-            type="text"
-            placeholder="Introduce tu nombre..."
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            className="wolf-input"
-        />
-         {error && <p className="wolf-error">{error}</p>}
-        <button className="wolf-button" onClick={handlePlay}>
-        A JUGAR
-        </button>
+        {live !== 'Live' ? 
+        (
+            <h1 className="wolf-title">{live}</h1>
+        ): 
+        (
+            <>
+            <h1 className="wolf-title">Lobo de Castonegro</h1>
+            <input
+                type="text"
+                placeholder="Introduce tu nombre..."
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className="wolf-input"
+            />
+            {error && <p className="wolf-error">{error}</p>}
+            <button className="wolf-button" onClick={handlePlay}>
+                A JUGAR
+            </button>
+            </>
+        )}
     </div>)
     )
 }

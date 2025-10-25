@@ -32,8 +32,8 @@ export async function connect(username: string) {
   }
 }
 
-export async function Test() {
-  const response = await fetch("https://localhost:7206/Requena");
+export async function Live() {
+  const response = await fetch("https://localhost:7206/Health");
   // const response = await fetch("https://wolfgamebackend.onrender.com/Requena");
 
   if (!response.ok) {
